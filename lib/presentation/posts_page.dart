@@ -36,7 +36,23 @@ class _PostsPageState extends State<PostsPage> {
   }
 
   Widget _post(Post post, BuildContext context) {
-    print("POST : ${post.title}");
-    return Container();
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      margin: const EdgeInsets.all(10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "${post.title}",
+            style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.blue,
+                fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 6.0),
+          Text(post.body.toString()),
+        ],
+      ),
+    );
   }
 }
